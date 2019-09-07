@@ -1,0 +1,292 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\NUnit3TestAdapter.3.15.1\build\net35\NUnit3TestAdapter.props" Condition="Exists('packages\NUnit3TestAdapter.3.15.1\build\net35\NUnit3TestAdapter.props')" />
+  <Import Project="packages\NUnit.3.12.0\build\NUnit.props" Condition="Exists('packages\NUnit.3.12.0\build\NUnit.props')" />
+  <Import Project="packages\MSTest.TestAdapter.1.3.2\build\net45\MSTest.TestAdapter.props" Condition="Exists('packages\MSTest.TestAdapter.1.3.2\build\net45\MSTest.TestAdapter.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7DB117C6-C412-4DCB-A820-495DE4FCF0FC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AutomationFramework33</RootNamespace>
+    <AssemblyName>AutomationFramework33</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">15.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
+    <IsCodedUITest>False</IsCodedUITest>
+    <TestProjectType>UnitTest</TestProjectType>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ExtentReports, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\ExtentReports.3.0.0\lib\ExtentReports.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.TestPlatform.TestFramework, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\MSTest.TestFramework.1.3.2\lib\net45\Microsoft.VisualStudio.TestPlatform.TestFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\MSTest.TestFramework.1.3.2\lib\net45\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework, Version=3.12.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>packages\NUnit.3.12.0\lib\net45\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="WebDriver, Version=3.141.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Selenium.WebDriver.3.141.0\lib\net45\WebDriver.dll</HintPath>
+    </Reference>
+    <Reference Include="WebDriver.Support, Version=3.141.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Selenium.Support.3.141.0\lib\net45\WebDriver.Support.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseClass\BaseClasses.cs" />
+    <Compile Include="BaseClass\DriverAndLoginDTO.cs" />
+    <Compile Include="Configuration\AppConfigReader.cs" />
+    <Compile Include="Configuration\BrowserType.cs" />
+    <Compile Include="CustomException\NoSuitableDriverFound.cs" />
+    <Compile Include="Interfaces\IConfig.cs" />
+    <Compile Include="PageObject\HomePage.cs" />
+    <Compile Include="Settings\AppConfigKeys.cs" />
+    <Compile Include="Settings\ObjectRepository.cs" />
+    <Compile Include="TestScripts\Testeconomictimes.cs" />
+    <Compile Include="TestScripts\Testindiatv.cs" />
+    <Compile Include="TestScripts\Testndtv.cs" />
+    <Compile Include="TestScripts\Testzeetv.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UnitTest1.cs" />
+    <Compile Include="Utility\BasePage.cs" />
+    <Compile Include="Utility\GetScreenShot.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="license" />
+    <None Include="packages.config" />
+    <None Include="TrendTest.playlist" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ErrorScreenshots\screesnshotname2019-09-01_08-42-19-PM.png" />
+    <Content Include="ErrorScreenshots\screesnshotname2019-09-01_08-43-14-PM.png" />
+    <Content Include="ErrorScreenshots\screesnshotname2019-09-01_08-43-28-PM.png" />
+    <Content Include="ErrorScreenshots\screesnshotname2019-09-01_08-43-34-PM.png" />
+    <Content Include="ErrorScreenshots\screesnshotname2019-09-01_08-50-02-PM.png" />
+    <Content Include="ErrorScreenshots\screesnshotname2019-09-01_08-50-18-PM.png" />
+    <Content Include="ErrorScreenshots\screesnshotname2019-09-01_08-50-28-PM.png" />
+    <Content Include="ErrorScreenshots\screesnshotname2019-09-01_08-50-43-PM.png" />
+    <Content Include="ErrorScreenshots\screesnshotname2019-09-01_08-52-03-PM.png" />
+    <Content Include="ErrorScreenshots\screesnshotname2019-09-01_09-19-15-PM.png" />
+    <Content Include="ErrorScreenshots\screesnshotname2019-09-01_09-19-54-PM.png" />
+    <Content Include="ErrorScreenshots\screesnshotname2019-09-01_09-20-07-PM.png" />
+    <Content Include="ErrorScreenshots\screesnshotname2019-09-01_09-21-11-PM.png" />
+    <Content Include="ErrorScreenshots\screesnshotname2019-09-01_09-21-34-PM.png" />
+    <Content Include="ErrorScreenshots\screesnshotname2019-09-01_09-21-49-PM.png" />
+    <Content Include="ErrorScreenshots\screesnshotname2019-09-01_09-22-07-PM.png" />
+    <Content Include="ErrorScreenshots\screesnshotname2019-09-01_09-22-23-PM.png" />
+    <Content Include="ErrorScreenshots\screesnshotname2019-09-01_09-22-39-PM.png" />
+    <Content Include="ErrorScreenshots\screesnshotname2019-09-02_07-54-45-PM.png" />
+    <Content Include="ErrorScreenshots\screesnshotname2019-09-02_07-55-56-PM.png" />
+    <Content Include="ErrorScreenshots\screesnshotname2019-09-02_07-56-00-PM.png" />
+    <Content Include="ErrorScreenshots\screesnshotname2019-09-02_07-57-19-PM.png" />
+    <Content Include="ErrorScreenshots\screesnshotname2019-09-02_07-57-22-PM.png" />
+    <Content Include="ErrorScreenshots\screesnshotname2019-09-02_07-58-39-PM.png" />
+    <Content Include="ErrorScreenshots\screesnshotname2019-09-02_07-58-43-PM.png" />
+    <Content Include="ErrorScreenshots\screesnshotname2019-09-02_08-09-34-PM.png" />
+    <Content Include="ErrorScreenshots\screesnshotname2019-09-02_08-10-01-PM.png" />
+    <Content Include="ErrorScreenshots\screesnshotname2019-09-02_08-10-10-PM.png" />
+    <Content Include="ErrorScreenshots\screesnshotname2019-09-02_08-10-29-PM.png" />
+    <Content Include="ErrorScreenshots\screesnshotname2019-09-02_08-10-49-PM.png" />
+    <Content Include="ErrorScreenshots\screesnshotname2019-09-02_08-11-08-PM.png" />
+    <Content Include="ErrorScreenshots\screesnshotname2019-09-02_08-11-17-PM.png" />
+    <Content Include="ErrorScreenshots\screesnshotname2019-09-02_08-11-36-PM.png" />
+    <Content Include="ErrorScreenshots\screesnshotname2019-09-02_08-11-45-PM.png" />
+    <Content Include="ErrorScreenshots\screesnshotname2019-09-02_08-12-35-PM.png" />
+    <Content Include="ErrorScreenshots\screesnshotname2019-09-02_08-12-38-PM.png" />
+    <Content Include="ErrorScreenshots\screesnshotname2019-09-02_08-14-04-PM.png" />
+    <Content Include="ErrorScreenshots\screesnshotname2019-09-02_08-23-19-PM.png" />
+    <Content Include="ErrorScreenshots\screesnshotname2019-09-02_08-23-47-PM.png" />
+    <Content Include="ErrorScreenshots\screesnshotname2019-09-02_08-23-58-PM.png" />
+    <Content Include="ErrorScreenshots\screesnshotname2019-09-02_08-24-18-PM.png" />
+    <Content Include="ErrorScreenshots\screesnshotname2019-09-02_08-24-41-PM.png" />
+    <Content Include="ErrorScreenshots\screesnshotname2019-09-02_08-25-01-PM.png" />
+    <Content Include="ErrorScreenshots\screesnshotname2019-09-02_08-25-16-PM.png" />
+    <Content Include="ErrorScreenshots\screesnshotname2019-09-02_08-25-33-PM.png" />
+    <Content Include="ErrorScreenshots\screesnshotname2019-09-02_08-25-50-PM.png" />
+    <Content Include="ErrorScreenshots\screesnshotname2019-09-02_08-26-50-PM.png" />
+    <Content Include="ErrorScreenshots\screesnshotname2019-09-02_08-27-16-PM.png" />
+    <Content Include="ErrorScreenshots\screesnshotname2019-09-02_08-27-39-PM.png" />
+    <Content Include="ErrorScreenshots\screesnshotname2019-09-02_08-28-08-PM.png" />
+    <Content Include="ErrorScreenshots\screesnshotname2019-09-02_08-28-41-PM.png" />
+    <Content Include="ErrorScreenshots\screesnshotname2019-09-02_08-29-02-PM.png" />
+    <Content Include="ErrorScreenshots\screesnshotname2019-09-02_08-29-24-PM.png" />
+    <Content Include="ErrorScreenshots\screesnshotname2019-09-02_08-29-51-PM.png" />
+    <Content Include="ErrorScreenshots\screesnshotname2019-09-02_08-30-12-PM.png" />
+    <Content Include="ErrorScreenshots\screesnshotname2019-09-02_08-31-13-PM.png" />
+    <Content Include="ErrorScreenshots\screesnshotname2019-09-02_08-31-48-PM.png" />
+    <Content Include="ErrorScreenshots\screesnshotname2019-09-02_08-32-10-PM.png" />
+    <Content Include="ErrorScreenshots\screesnshotname2019-09-02_08-32-52-PM.png" />
+    <Content Include="ErrorScreenshots\screesnshotname2019-09-02_08-33-21-PM.png" />
+    <Content Include="ErrorScreenshots\screesnshotname2019-09-02_08-33-53-PM.png" />
+    <Content Include="ErrorScreenshots\screesnshotname2019-09-02_08-34-14-PM.png" />
+    <Content Include="ErrorScreenshots\screesnshotname2019-09-02_08-34-41-PM.png" />
+    <Content Include="ErrorScreenshots\screesnshotname2019-09-02_08-35-03-PM.png" />
+    <Content Include="ErrorScreenshots\screesnshotname2019-09-02_08-36-11-PM.png" />
+    <Content Include="ErrorScreenshots\screesnshotname2019-09-02_08-36-39-PM.png" />
+    <Content Include="ErrorScreenshots\screesnshotname2019-09-02_08-37-00-PM.png" />
+    <Content Include="ErrorScreenshots\screesnshotname2019-09-02_08-37-25-PM.png" />
+    <Content Include="ErrorScreenshots\screesnshotname2019-09-02_08-37-53-PM.png" />
+    <Content Include="ErrorScreenshots\screesnshotname2019-09-02_08-38-17-PM.png" />
+    <Content Include="ErrorScreenshots\screesnshotname2019-09-02_08-38-36-PM.png" />
+    <Content Include="ErrorScreenshots\screesnshotname2019-09-02_08-38-56-PM.png" />
+    <Content Include="ErrorScreenshots\screesnshotname2019-09-02_08-39-20-PM.png" />
+    <Content Include="ErrorScreenshots\screesnshotname2019-09-03_08-19-46-PM.png" />
+    <Content Include="ErrorScreenshots\screesnshotname2019-09-03_08-19-50-PM.png" />
+    <Content Include="ErrorScreenshots\screesnshotname2019-09-03_08-19-51-PM.png" />
+    <Content Include="ErrorScreenshots\screesnshotname2019-09-03_11-06-23-PM.png" />
+    <Content Include="ErrorScreenshots\screesnshotname2019-09-03_11-08-00-PM.png" />
+    <Content Include="ErrorScreenshots\screesnshotname2019-09-03_11-08-12-PM.png" />
+    <Content Include="ErrorScreenshots\screesnshotname2019-09-03_11-08-35-PM.png" />
+    <Content Include="ErrorScreenshots\screesnshotname2019-09-03_11-09-06-PM.png" />
+    <Content Include="ErrorScreenshots\screesnshotname2019-09-03_11-09-36-PM.png" />
+    <Content Include="ErrorScreenshots\screesnshotname2019-09-03_11-10-01-PM.png" />
+    <Content Include="ErrorScreenshots\screesnshotname2019-09-03_11-11-26-PM.png" />
+    <Content Include="ErrorScreenshots\screesnshotname2019-09-03_11-11-48-PM.png" />
+    <Content Include="ErrorScreenshots\screesnshotname2019-09-03_11-18-09-PM.png" />
+    <Content Include="ErrorScreenshots\screesnshotname2019-09-03_11-18-57-PM.png" />
+    <Content Include="ErrorScreenshots\screesnshotname2019-09-03_11-19-17-PM.png" />
+    <Content Include="ErrorScreenshots\screesnshotname2019-09-03_11-19-37-PM.png" />
+    <Content Include="ErrorScreenshots\screesnshotname2019-09-03_11-20-08-PM.png" />
+    <Content Include="ErrorScreenshots\screesnshotname2019-09-03_11-20-27-PM.png" />
+    <Content Include="ErrorScreenshots\screesnshotname2019-09-03_11-20-37-PM.png" />
+    <Content Include="ErrorScreenshots\screesnshotname2019-09-03_11-21-24-PM.png" />
+    <Content Include="ErrorScreenshots\screesnshotname2019-09-04_08-46-59-PM.png" />
+    <Content Include="ErrorScreenshots\screesnshotname2019-09-04_08-47-43-PM.png" />
+    <Content Include="ErrorScreenshots\screesnshotname2019-09-04_08-48-04-PM.png" />
+    <Content Include="ErrorScreenshots\screesnshotname2019-09-04_08-48-18-PM.png" />
+    <Content Include="ErrorScreenshots\screesnshotname2019-09-04_08-48-34-PM.png" />
+    <Content Include="ErrorScreenshots\screesnshotname2019-09-04_08-48-53-PM.png" />
+    <Content Include="ErrorScreenshots\screesnshotname2019-09-04_09-15-16-PM.png" />
+    <Content Include="extent-config.xml" />
+    <Content Include="Player.runsettings.xml" />
+    <Content Include="Report\TestRunReport.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ExcelReader\" />
+    <Folder Include="TestResults\Deploy_Admin 2019-08-29 19_14_36\In\DESKTOP-IA0DLJF\" />
+    <Folder Include="TestResults\Deploy_Admin 2019-08-29 19_14_36\Out\" />
+    <Folder Include="TestResults\Deploy_Admin 2019-08-29 19_16_19\In\DESKTOP-IA0DLJF\" />
+    <Folder Include="TestResults\Deploy_Admin 2019-08-29 19_16_19\Out\" />
+    <Folder Include="TestResults\Deploy_Admin 2019-08-29 19_16_55\In\DESKTOP-IA0DLJF\" />
+    <Folder Include="TestResults\Deploy_Admin 2019-08-29 19_16_55\Out\" />
+    <Folder Include="TestResults\Deploy_Admin 2019-08-29 19_59_53\In\DESKTOP-IA0DLJF\" />
+    <Folder Include="TestResults\Deploy_Admin 2019-08-29 19_59_53\Out\" />
+    <Folder Include="TestResults\Deploy_Admin 2019-08-30 14_26_08\In\DESKTOP-IA0DLJF\" />
+    <Folder Include="TestResults\Deploy_Admin 2019-08-30 14_26_08\Out\" />
+    <Folder Include="TestResults\Deploy_Admin 2019-08-30 14_29_12\In\DESKTOP-IA0DLJF\" />
+    <Folder Include="TestResults\Deploy_Admin 2019-08-30 14_29_12\Out\" />
+    <Folder Include="TestResults\Deploy_Admin 2019-08-30 14_53_25\In\DESKTOP-IA0DLJF\" />
+    <Folder Include="TestResults\Deploy_Admin 2019-08-30 14_53_25\Out\" />
+    <Folder Include="TestResults\Deploy_Admin 2019-08-30 14_59_11\In\DESKTOP-IA0DLJF\" />
+    <Folder Include="TestResults\Deploy_Admin 2019-08-30 14_59_11\Out\" />
+    <Folder Include="TestResults\Deploy_Admin 2019-08-30 15_14_27\In\DESKTOP-IA0DLJF\" />
+    <Folder Include="TestResults\Deploy_Admin 2019-08-30 15_14_27\Out\" />
+    <Folder Include="TestResults\Deploy_Admin 2019-08-30 15_17_39\In\DESKTOP-IA0DLJF\" />
+    <Folder Include="TestResults\Deploy_Admin 2019-08-30 15_17_39\Out\" />
+    <Folder Include="TestResults\Deploy_Admin 2019-08-30 15_20_11\In\DESKTOP-IA0DLJF\" />
+    <Folder Include="TestResults\Deploy_Admin 2019-08-30 15_20_11\Out\" />
+    <Folder Include="TestResults\Deploy_Admin 2019-08-30 15_22_34\In\DESKTOP-IA0DLJF\" />
+    <Folder Include="TestResults\Deploy_Admin 2019-08-30 15_22_34\Out\" />
+    <Folder Include="TestResults\Deploy_Admin 2019-08-30 15_25_15\In\DESKTOP-IA0DLJF\" />
+    <Folder Include="TestResults\Deploy_Admin 2019-08-30 15_25_15\Out\" />
+    <Folder Include="TestResults\Deploy_Admin 2019-08-30 15_50_18\In\DESKTOP-IA0DLJF\" />
+    <Folder Include="TestResults\Deploy_Admin 2019-08-30 15_50_18\Out\" />
+    <Folder Include="TestResults\Deploy_Admin 2019-08-30 15_54_42\In\DESKTOP-IA0DLJF\" />
+    <Folder Include="TestResults\Deploy_Admin 2019-08-30 15_54_42\Out\" />
+    <Folder Include="TestResults\Deploy_Admin 2019-08-30 15_56_05\In\DESKTOP-IA0DLJF\" />
+    <Folder Include="TestResults\Deploy_Admin 2019-08-30 15_56_05\Out\" />
+    <Folder Include="TestResults\Deploy_Admin 2019-08-30 15_57_01\In\DESKTOP-IA0DLJF\" />
+    <Folder Include="TestResults\Deploy_Admin 2019-08-30 15_57_01\Out\" />
+    <Folder Include="TestResults\Deploy_Admin 2019-08-30 15_58_51\In\DESKTOP-IA0DLJF\" />
+    <Folder Include="TestResults\Deploy_Admin 2019-08-30 15_58_51\Out\" />
+    <Folder Include="TestResults\Deploy_Admin 2019-08-30 15_59_22\In\DESKTOP-IA0DLJF\" />
+    <Folder Include="TestResults\Deploy_Admin 2019-08-30 15_59_22\Out\" />
+    <Folder Include="TestResults\Deploy_Admin 2019-08-30 20_00_46\In\DESKTOP-IA0DLJF\" />
+    <Folder Include="TestResults\Deploy_Admin 2019-08-30 20_00_46\Out\" />
+    <Folder Include="TestResults\Deploy_Admin 2019-08-30 20_01_34\In\DESKTOP-IA0DLJF\" />
+    <Folder Include="TestResults\Deploy_Admin 2019-08-30 20_01_34\Out\" />
+    <Folder Include="TestResults\Deploy_Admin 2019-08-30 20_02_09\In\DESKTOP-IA0DLJF\" />
+    <Folder Include="TestResults\Deploy_Admin 2019-08-30 20_02_09\Out\" />
+    <Folder Include="TestResults\Deploy_Admin 2019-08-30 20_30_42\In\DESKTOP-IA0DLJF\" />
+    <Folder Include="TestResults\Deploy_Admin 2019-08-30 20_30_42\Out\" />
+    <Folder Include="TestResults\Deploy_Admin 2019-08-30 20_38_40\In\DESKTOP-IA0DLJF\" />
+    <Folder Include="TestResults\Deploy_Admin 2019-08-30 20_38_40\Out\" />
+    <Folder Include="TestResults\Deploy_Admin 2019-08-30 20_44_44\In\DESKTOP-IA0DLJF\" />
+    <Folder Include="TestResults\Deploy_Admin 2019-08-30 20_44_44\Out\" />
+    <Folder Include="TestResults\Deploy_Admin 2019-08-30 20_46_29\In\DESKTOP-IA0DLJF\" />
+    <Folder Include="TestResults\Deploy_Admin 2019-08-30 20_46_29\Out\" />
+    <Folder Include="TestResults\Deploy_Admin 2019-08-30 20_50_55\In\DESKTOP-IA0DLJF\" />
+    <Folder Include="TestResults\Deploy_Admin 2019-08-30 20_50_55\Out\" />
+    <Folder Include="TestResults\Deploy_Admin 2019-08-30 21_06_04\In\DESKTOP-IA0DLJF\" />
+    <Folder Include="TestResults\Deploy_Admin 2019-08-30 21_06_04\Out\" />
+    <Folder Include="TestResults\Deploy_Admin 2019-08-30 21_07_31\In\DESKTOP-IA0DLJF\" />
+    <Folder Include="TestResults\Deploy_Admin 2019-08-30 21_07_31\Out\" />
+    <Folder Include="TestResults\Deploy_Admin 2019-08-30 21_37_53\In\DESKTOP-IA0DLJF\" />
+    <Folder Include="TestResults\Deploy_Admin 2019-08-30 21_37_53\Out\" />
+    <Folder Include="TestResults\Deploy_Admin 2019-08-31 18_22_03\In\DESKTOP-IA0DLJF\" />
+    <Folder Include="TestResults\Deploy_Admin 2019-08-31 18_22_03\Out\" />
+    <Folder Include="TestResults\Deploy_Admin 2019-08-31 18_23_23\In\DESKTOP-IA0DLJF\" />
+    <Folder Include="TestResults\Deploy_Admin 2019-08-31 18_23_23\Out\" />
+    <Folder Include="TestResults\Deploy_Admin 2019-08-31 18_35_25\In\DESKTOP-IA0DLJF\" />
+    <Folder Include="TestResults\Deploy_Admin 2019-08-31 18_35_25\Out\" />
+    <Folder Include="TestResults\Deploy_Admin 2019-08-31 18_36_03\In\DESKTOP-IA0DLJF\" />
+    <Folder Include="TestResults\Deploy_Admin 2019-08-31 18_36_03\Out\" />
+    <Folder Include="TestResults\Deploy_Admin 2019-08-31 18_36_46\In\DESKTOP-IA0DLJF\" />
+    <Folder Include="TestResults\Deploy_Admin 2019-08-31 18_36_46\Out\" />
+    <Folder Include="TestResults\Deploy_Admin 2019-08-31 18_40_18\In\DESKTOP-IA0DLJF\" />
+    <Folder Include="TestResults\Deploy_Admin 2019-08-31 18_40_18\Out\" />
+    <Folder Include="TestResults\Deploy_Admin 2019-08-31 18_41_15\In\DESKTOP-IA0DLJF\" />
+    <Folder Include="TestResults\Deploy_Admin 2019-08-31 18_41_15\Out\" />
+  </ItemGroup>
+  <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\MSTest.TestAdapter.1.3.2\build\net45\MSTest.TestAdapter.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\MSTest.TestAdapter.1.3.2\build\net45\MSTest.TestAdapter.props'))" />
+    <Error Condition="!Exists('packages\MSTest.TestAdapter.1.3.2\build\net45\MSTest.TestAdapter.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\MSTest.TestAdapter.1.3.2\build\net45\MSTest.TestAdapter.targets'))" />
+    <Error Condition="!Exists('packages\NUnit.3.12.0\build\NUnit.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\NUnit.3.12.0\build\NUnit.props'))" />
+    <Error Condition="!Exists('packages\Selenium.WebDriver.IEDriver.3.150.0\build\Selenium.WebDriver.IEDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Selenium.WebDriver.IEDriver.3.150.0\build\Selenium.WebDriver.IEDriver.targets'))" />
+    <Error Condition="!Exists('packages\Selenium.WebDriver.ChromeDriver.76.0.3809.12600\build\Selenium.WebDriver.ChromeDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Selenium.WebDriver.ChromeDriver.76.0.3809.12600\build\Selenium.WebDriver.ChromeDriver.targets'))" />
+    <Error Condition="!Exists('packages\Selenium.Chrome.WebDriver.76.0.0\build\Selenium.Chrome.WebDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Selenium.Chrome.WebDriver.76.0.0\build\Selenium.Chrome.WebDriver.targets'))" />
+    <Error Condition="!Exists('packages\NUnit3TestAdapter.3.15.1\build\net35\NUnit3TestAdapter.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\NUnit3TestAdapter.3.15.1\build\net35\NUnit3TestAdapter.props'))" />
+  </Target>
+  <Import Project="packages\MSTest.TestAdapter.1.3.2\build\net45\MSTest.TestAdapter.targets" Condition="Exists('packages\MSTest.TestAdapter.1.3.2\build\net45\MSTest.TestAdapter.targets')" />
+  <Import Project="packages\Selenium.WebDriver.IEDriver.3.150.0\build\Selenium.WebDriver.IEDriver.targets" Condition="Exists('packages\Selenium.WebDriver.IEDriver.3.150.0\build\Selenium.WebDriver.IEDriver.targets')" />
+  <Import Project="packages\Selenium.WebDriver.ChromeDriver.76.0.3809.12600\build\Selenium.WebDriver.ChromeDriver.targets" Condition="Exists('packages\Selenium.WebDriver.ChromeDriver.76.0.3809.12600\build\Selenium.WebDriver.ChromeDriver.targets')" />
+  <Import Project="packages\Selenium.Chrome.WebDriver.76.0.0\build\Selenium.Chrome.WebDriver.targets" Condition="Exists('packages\Selenium.Chrome.WebDriver.76.0.0\build\Selenium.Chrome.WebDriver.targets')" />
+</Project>
