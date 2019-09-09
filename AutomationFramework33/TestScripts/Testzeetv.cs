@@ -17,7 +17,7 @@ namespace AutomationFramework33.AutomationFramework33.TestScripts
     [Parallelizable]
 
 
-    //Changes by charu
+    //Changes by charuone
 
     public class Testzeetv : BaseClasses
 
